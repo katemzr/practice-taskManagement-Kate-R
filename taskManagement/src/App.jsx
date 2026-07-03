@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { Route, Routes } from 'react-router'
 import TaskList from './components/TaskList'
 import TaskDetail from './components/TaskDetail'
 
