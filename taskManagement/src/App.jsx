@@ -1,6 +1,8 @@
-import { Routes } from 'react-router'
-import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router'
+import TaskList from './components/TaskList'
+import TaskDetail from './components/TaskDetail'
 
+import './App.css'
 
 const tasks = [
   {id:1,
@@ -17,16 +19,22 @@ const tasks = [
   }
 ]
 
+
+
 function App() {
+   return (
+    
+      <div>
+        <Routes>
+          <Route path= "/"
+          element={<TaskList taskData={tasks} />}
+          />
 
-  return (
-    <Routes>
-      <Route path= '/'
-      element={<TaskLIst taskData={tasks}/>}/>
-
-      <Route path='/task/:taskId'
-      element={<TaskDetail taskData={tasks}/>}/>
-    </Routes>
+          <Route path="/task/:taskId"
+          element={<TaskDetail taskData={tasks} />}
+          />
+        </Routes>
+      </div>
   )
 }
 
